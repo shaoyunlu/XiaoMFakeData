@@ -13,7 +13,7 @@ router.get('/list', function(req, res) {
                       {name : '菜单五' ,age:"lineChart",gender : '5'},
                       {name : '菜单六' ,age:"document",gender : '6'}
                   ],
-                  total : 150
+                  total : 4
             }
           });
     },1000)

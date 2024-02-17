@@ -15,7 +15,7 @@ app.get('/web/menu/list', (req, res) => {
   res.json({
     success: true,
     payLoad: [
-                {name : '账号设置' ,value : '1' ,icon:"upload" ,children : [
+                {name : '账号设置' ,value : '1' ,icon:"user" ,children : [
                                       {name : '管理员' ,value:'/account/admin'},
                                       {name : '用户' ,value:'/account/user'}
                                   ]
