@@ -1,22 +1,17 @@
 var express = require('express');
 var router = express.Router();
+const { faker } = require('@faker-js/faker');
+
 
 const users = Array.from({length : 63} ,()=>({
     id: 1,
-    name:'hello world',
-    age:90,
-    gender:1,
-    status:1
+    name:faker.person.fullName(),
+    age:faker.number.int({ min: 10, max: 100 }),
+    gender:faker.number.int({ min: 1, max: 2 }),
+    status:faker.number.int({ min: 1, max: 3 }),
+    updateTime:faker.date.anytime().toISOString().split('T')[0]
 }))
 
-function paginate(array ,page_size ,page_number){
-    page_size = parseInt(page_size)
-    page_number = parseInt(page_number)
-    const start = (page_number -1) * page_size
-    return array.slice(start,start + page_size)
-}
-
-// 定义商品相关的路由
 router.get('/list', function(req, res) {
     let resList = paginate(users,req.query.pageSize,req.query.pageNum)
     setTimeout(()=>{
