@@ -8,4 +8,4 @@ execSync('git commit -m "Release version"');
 execSync('git push');
 
 // 上传到云服务器
-execSync('pscp -l root -i C:\\Users\\Administrator\\.ssh\\putty.ppk  -r F:\\github\\XiaoMFakeData\\src\\* 114.116.50.8:/syl/web-3100')
+execSync('pscp -l root -i C:\\Users\\Administrator\\.ssh\\putty.ppk  -r F:\\github\\XiaoMFakeData\\src\\* 114.116.50.8:/syl/web-3100/src')
