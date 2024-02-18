@@ -9,3 +9,4 @@ execSync('git push');
 
 // 上传到云服务器
 execSync('pscp -l root -i C:\\Users\\Administrator\\.ssh\\putty.ppk  -r F:\\github\\XiaoMFakeData\\src\\* 114.116.50.8:/syl/web-3100/src')
+execSync('pscp -l root -i C:\\Users\\Administrator\\.ssh\\putty.ppk  -r F:\\github\\XiaoMFakeData\\server.js 114.116.50.8:/syl/web-3100/server.js')

@@ -13,7 +13,7 @@ const systemRouter = require('./src/base/system')
 app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
 
-// 示例路由，返回假数据
+// 示例路由，返回假数据1
 app.get('/web/menu/list', (req, res) => {
   res.json({
     success: true,
