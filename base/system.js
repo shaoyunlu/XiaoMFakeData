@@ -10,16 +10,28 @@ const bulletinList = Array.from({length : 63} ,()=>({
 
 router.get('/bulletin/list', function(req, res) {
     let resList = paginate(bulletinList,req.query.pageSize,req.query.pageNum)
-    setTimeout(()=>{
+    lazyDo(()=>{
         res.json({
             success: true,
             payLoad: {
                   list : resList,
                   total : bulletinList.length
             }
-          });
-    },1000)
+        });
+    })
 });
+
+router.post('/bulletin/add' ,(req,res)=>{
+    const jsonData = req.body;
+    // 在这里处理jsonData...
+    console.log(jsonData)
+    lazyDo(()=>{
+        res.json({
+            success: true,
+            payLoad:{}
+        })
+    })
+})
 
 // 导出路由
 module.exports = router;

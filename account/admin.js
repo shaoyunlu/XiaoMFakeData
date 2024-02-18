@@ -14,7 +14,7 @@ const users = Array.from({length : 63} ,()=>({
 
 router.get('/list', function(req, res) {
     let resList = paginate(users,req.query.pageSize,req.query.pageNum)
-    setTimeout(()=>{
+    lazyDo(()=>{
         res.json({
             success: true,
             payLoad: {
@@ -22,7 +22,7 @@ router.get('/list', function(req, res) {
                   total : users.length
             }
           });
-    },1000)
+    })
 });
 
 // 管理员新增
@@ -30,12 +30,12 @@ router.post('/add' ,(req,res)=>{
     const jsonData = req.body;
     // 在这里处理jsonData...
     console.log(jsonData)
-    setTimeout(()=>{
+    lazyDo(()=>{
         res.json({
             success : true,
             payLoad:{}
         })
-    },1000)
+    })
 })
 
 

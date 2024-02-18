@@ -44,6 +44,12 @@ global.paginate = function(array ,page_size ,page_number){
   return array.slice(start,start + page_size)
 }
 
+global.lazyDo = (fn)=>{
+  setTimeout(() => {
+    fn & fn()
+  }, 1000);
+}
+
 app.listen(port, () => {
   console.log(`服务已启动，监听端口 ${port}`);
 });
