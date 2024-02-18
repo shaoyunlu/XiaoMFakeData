@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = 4000;
+const port = 3100;
 
 app.use(express.json()); // 使得我们可以解析JSON请求体
 app.use(express.static('public')); // 设置静态目录文件夹
