@@ -11,7 +11,7 @@ const adminRouter = require('./src/account/admin');
 const systemRouter = require('./src/base/system') 
 
 app.use('/web/account/admin', adminRouter);
-app.use('/web/base/system', systemRouter);
+app.use('/web/base/system', systemRouter); 
 
 // 示例路由，返回假数据
 app.get('/web/menu/list', (req, res) => {
