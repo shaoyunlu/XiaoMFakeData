@@ -3,7 +3,7 @@ var router = express.Router();
 const { faker } = require('@faker-js/faker');
 
 
-const users = Array.from({length : 63} ,()=>({
+const users = Array.from({length : 32} ,()=>({
     id: 1,
     name:faker.person.fullName(),
     age:faker.number.int({ min: 10, max: 100 }),
