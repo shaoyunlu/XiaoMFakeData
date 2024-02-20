@@ -5,7 +5,7 @@ const { faker } = require('@faker-js/faker');
 const carouselList = Array.from({length : 6} ,()=>({
     id : faker.string.uuid(),
     name : faker.person.lastName(),
-    url : faker.image.url({width:320,height:180})
+    url : faker.image.url({width:180,height:320})
 }))
 
 router.get('/list', function(req, res) {
