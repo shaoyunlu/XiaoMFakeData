@@ -9,7 +9,7 @@ app.use(cors());
 
 const adminRouter = require('./src/web/account/admin')
 const systemRouter = require('./src/web/base/system') 
-const carouselRouter = require('./src/web/base/carousel')
+const carouselRouter = require('./src/web/base/carousel') 
 
 app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
