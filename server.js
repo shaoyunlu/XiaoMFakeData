@@ -7,9 +7,9 @@ app.use(express.json()); // 使得我们可以解析JSON请求体
 app.use(express.static('public')); // 设置静态目录文件夹
 app.use(cors());
 
-const adminRouter = require('./src/account/admin');
-const systemRouter = require('./src/base/system') 
-const carouselRouter = require('./src/base/carousel') 
+const adminRouter = require('./src/web/account/admin');
+const systemRouter = require('./src/web/base/system') 
+const carouselRouter = require('./src/web/base/carousel')
 
 app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
