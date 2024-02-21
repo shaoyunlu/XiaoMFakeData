@@ -9,11 +9,14 @@ app.use(cors());
 
 const adminRouter = require('./src/web/account/admin')
 const systemRouter = require('./src/web/base/system') 
-const carouselRouter = require('./src/web/base/carousel') 
+const carouselRouter = require('./src/web/base/carousel')
 
 app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
 app.use('/web/base/carousel', carouselRouter);
+
+const app_loginRouter = require('./src/app/login')
+app.use('/app/login' ,app_loginRouter)
 
 // 菜单路由
 app.get('/web/menu/list', (req, res) => {
