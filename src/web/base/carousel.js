@@ -33,10 +33,6 @@ router.get('/list', function(req, res) {
     })
 });
 
-// router.post('/pic/upload' ,(req,res)=>{
-
-// })
-
 router.post('/pic/upload', upload.single('image'), (req, res) => {
     // 'image' 是前端 FormData.append 的 key
     if (req.file) {
@@ -60,7 +56,7 @@ router.post('/order/adjust' ,(req,res)=>{
 })
 
 router.post('/pic/delete' ,(req,res)=>{
-    
+
 })
 
 // 导出路由
