@@ -41,7 +41,8 @@ router.post('/pic/upload', upload.single('image'), (req, res) => {
                 success: true,
                 payLoad: {
                             id:faker.string.uuid(),
-                            url:faker.image.url({width:180,height:320})}
+                            url:faker.image.url({width:180,height:320})},
+                            order:i++
             });
         })
     } else {
@@ -52,11 +53,21 @@ router.post('/pic/upload', upload.single('image'), (req, res) => {
 });
 
 router.post('/order/adjust' ,(req,res)=>{
-
+    lazyDo(()=>{
+        res.json({
+            success: true,
+            payLoad: {}
+        });
+    })
 })
 
 router.post('/pic/delete' ,(req,res)=>{
-
+    lazyDo(()=>{
+        res.json({
+            success: true,
+            payLoad: {}
+        });
+    })
 })
 
 // 导出路由
