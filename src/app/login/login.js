@@ -13,3 +13,6 @@ router.post('/login' ,(req,res)=>{
         })
     })
 })
+
+// 导出路由
+module.exports = router;

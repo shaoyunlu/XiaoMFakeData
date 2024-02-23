@@ -15,7 +15,7 @@ app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
 app.use('/web/base/carousel', carouselRouter);
 
-const app_loginRouter = require('./src/app/login')
+const app_loginRouter = require('./src/app/login/login')
 app.use('/app/login' ,app_loginRouter)
 
 // 菜单路由
