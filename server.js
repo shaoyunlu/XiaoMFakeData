@@ -10,10 +10,12 @@ app.use(cors());
 const adminRouter = require('./src/web/account/admin')
 const systemRouter = require('./src/web/base/system') 
 const carouselRouter = require('./src/web/base/carousel')
+const newsRouter = require('./src/web/news/index')
 
 app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
 app.use('/web/base/carousel', carouselRouter);
+app.use('/web/news', newsRouter)
 
 const app_loginRouter = require('./src/app/login/login')
 app.use('/app/login' ,app_loginRouter)
@@ -33,7 +35,7 @@ app.get('/web/menu/list', (req, res) => {
                         {name : '轮播图设置' ,value:'/base/carousel'}
                     ]
                 },
-                {name : '菜单三' ,icon:"download",value : '3'},
+                {name : '新闻管理' ,value : '/news' ,icon:"document"},
                 {name : '菜单四' ,icon:"edit",value : '4'},
                 {name : '菜单五' ,icon:"lineChart",value : '5'},
                 {name : '菜单六' ,icon:"document",value : '6'}

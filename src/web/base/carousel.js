@@ -3,13 +3,10 @@ const multer  = require('multer');
 var router = express.Router();
 const { faker } = require('@faker-js/faker');
 
-let i = 0;
-
 const carouselList = Array.from({length : 6} ,()=>({
     id : faker.string.uuid(),
     name : faker.person.lastName(),
-    url : faker.image.url({width:180,height:320}),
-    order : i++
+    url : faker.image.url({width:180,height:320})
 }))
 
 // 设置存储配置
@@ -41,8 +38,7 @@ router.post('/pic/upload', upload.single('image'), (req, res) => {
                 success: true,
                 payLoad: {
                             id:faker.string.uuid(),
-                            url:faker.image.url({width:180,height:320})},
-                            order:i++
+                            url:faker.image.url({width:180,height:320})}
             });
         })
     } else {
@@ -62,6 +58,8 @@ router.post('/order/adjust' ,(req,res)=>{
 })
 
 router.post('/pic/delete' ,(req,res)=>{
+    const jsonData = req.body;
+    console.log('执行轮播图片删除' ,jsonData)
     lazyDo(()=>{
         res.json({
             success: true,
