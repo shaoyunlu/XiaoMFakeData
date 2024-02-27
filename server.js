@@ -11,11 +11,13 @@ const adminRouter = require('./src/web/account/admin')
 const systemRouter = require('./src/web/base/system') 
 const carouselRouter = require('./src/web/base/carousel')
 const newsRouter = require('./src/web/news/index')
+const editorRouter = require('./src/web/editor/index')
 
 app.use('/web/account/admin', adminRouter);
 app.use('/web/base/system', systemRouter);
 app.use('/web/base/carousel', carouselRouter);
 app.use('/web/news', newsRouter)
+app.use('/web/editor', editorRouter)
 
 const app_loginRouter = require('./src/app/login/login')
 app.use('/app/login' ,app_loginRouter)
